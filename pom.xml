@@ -17,6 +17,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>final-api-hanshow</module>
+    </modules>
     <parent>
         <groupId>org.ifinalframework.project</groupId>
         <artifactId>final-project</artifactId>
@@ -24,10 +28,43 @@
     </parent>
     <groupId>org.ifinalframework.api</groupId>
     <artifactId>final-api</artifactId>
-    <version>1.2.4-SNAPSHOT1.2.4-SNAPSHOT</version>
     <name>final-api</name>
     <description>final-api</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <artifactId>retrofit</artifactId>
+            <groupId>com.squareup.retrofit2</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>okhttp</artifactId>
+            <groupId>com.squareup.okhttp3</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>converter-jackson</artifactId>
+            <groupId>com.squareup.retrofit2</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>validation-api</artifactId>
+            <groupId>javax.validation</groupId>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.ifinalframework.annotation</groupId>
+                <artifactId>final-annotation</artifactId>
+                <version>1.2.4-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.ifinalframework.api</groupId>
+                <artifactId>final-api-hanshow</artifactId>
+                <version>1.2.4-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
